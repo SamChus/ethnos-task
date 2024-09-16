@@ -1,11 +1,10 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import PostCard from "@/components/PostCard";
 import Loading from "@/components/Loading";
 import {
   Pagination,
   PaginationContent,
-  PaginationEllipsis,
   PaginationItem,
   PaginationLink,
   PaginationNext,
@@ -105,7 +104,7 @@ const Posts = () => {
           <PaginationPrevious href="#" onClick={() => paginate(currentPage - 1)} />
         </PaginationItem>
         {Array.from({ length: Math.ceil(posts.length / postsPerPage) }).map(
-        (item, index) => (
+        (_, index) => (
           <PaginationItem key={index}>
             <PaginationLink
             href="#"

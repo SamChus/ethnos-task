@@ -35,10 +35,9 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import axios from "axios";
-import useApi from "@/api/useApi";
 import Loading from "@/components/Loading";
 
-// Define the User type
+
 export type User = {
   id: string;
   name: string;
@@ -47,7 +46,7 @@ export type User = {
   company: string;
 };
 
-// Define the table columns
+
 export const columns: ColumnDef<User>[] = [
   {
     id: "select",

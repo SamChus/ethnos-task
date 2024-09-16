@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import users from "../assets/icons/users.png";
 import posts from "../assets/icons/posts.png";
@@ -9,8 +9,7 @@ import menu from "../assets/icons/menu.png";
 
 const SideBar = () => {
   const [open, setOpen] = useState(false);
-    const [active, setActive] = useState(false);
-  const navigate = useNavigate(); // Used for programmatic navigation
+  const navigate = useNavigate(); 
 
   const activeBgColor = "bg-[#555] text-white";
   const activeIconColor = "text-white";
@@ -46,7 +45,7 @@ const SideBar = () => {
             className={({ isActive }) =>
               `flex items-center gap-3 p-2 w-full hover:bg-[#555] transition-all relative cursor-pointer ${
                 isActive ? `${activeBgColor} ${activeIconColor}` : "text-white"
-              } ${setActive(isActive)}`
+              }`
             }
             onClick={() => navigate(route.path)}
           >

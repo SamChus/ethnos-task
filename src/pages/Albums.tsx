@@ -1,11 +1,10 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 import AlbumCard from "@/components/AlbumCard"; 
 import Loading from "@/components/Loading";
 import {
   Pagination,
   PaginationContent,
-  PaginationEllipsis,
   PaginationItem,
   PaginationLink,
   PaginationNext,
@@ -105,7 +104,7 @@ const Albums = () => {
             />
           </PaginationItem>
           {Array.from({ length: Math.ceil(albums.length / albumsPerPage) }).map(
-            (item, index) => (
+            (_, index) => (
               <PaginationItem key={index}>
                 <PaginationLink
                   href="#"
